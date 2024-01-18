@@ -8,7 +8,9 @@ from app.infrastructure.middlewares.http_request_middleware_test import TestHttp
 from app.infrastructure.database.postgresql_test import SQLALCHEMY_DATABASE_URL, engine, get_db_session
 from app.infrastructure.dtos import Base
 from app.infrastructure.dtos.user_dto import UserDto
+from app.infrastructure.dtos.todo_dto import TodoDto
 from app.domain.entitys.user_entity import UserEntity
+from app.domain.entitys.todo_entity import TodoEntity
 from app.presentation.routers.v1 import api_v1_router
 
 test_app = FastAPI()
@@ -24,6 +26,14 @@ def create_test_data(session):
         UserDto.from_entity(UserEntity.create(name="test user3", email="test3@example.com", password="testtest")),
     ]
     session.add_all(test_users)
+
+    # todo
+    test_todos: list[TodoDto] = [
+        TodoDto.from_entity(TodoEntity.create(user_id=1, title="test title1")),
+        TodoDto.from_entity(TodoEntity.create(user_id=1, title="test title2")),
+        TodoDto.from_entity(TodoEntity.create(user_id=1, title="test title3")),
+    ]
+    session.add_all(test_todos)
 
     session.commit()
     session.remove()
