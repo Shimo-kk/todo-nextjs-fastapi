@@ -7,6 +7,7 @@ from alembic import context
 
 from app.infrastructure.database.postgresql import SQLALCHEMY_DATABASE_URL
 from app.infrastructure.dtos import Base
+from app.infrastructure.dtos.user_dto import UserDto
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
