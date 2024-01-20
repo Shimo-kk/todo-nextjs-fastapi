@@ -12,4 +12,4 @@ COPY ./source/frontend /source
 # 各パッケージをインストール
 RUN npm install
 
-CMD ["npm", "run", "dev"]
+#CMD ["npm", "run", "dev"]
