@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <section className="bg-white dark:bg-gray-900">
+    <main>
+      <section className="bg-white dark:bg-gray-800">
         <div className="container flex flex-col items-center px-4 py-12 mx-auto text-center">
           <h1 className="max-w-2xl mx-auto text-6xl font-semibold tracking-tight text-gray-800 dark:text-white">
             Welcome to <span className="text-indigo-600">ToDo</span>!!
@@ -24,6 +24,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

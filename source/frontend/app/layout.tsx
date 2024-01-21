@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning>
       <body className={notoSansJp.className}>
         <Providers>
-          <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
+          <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-900">
             <Header />
-            <main>{children}</main>
+            {children}
             <Footer />
           </div>
         </Providers>
